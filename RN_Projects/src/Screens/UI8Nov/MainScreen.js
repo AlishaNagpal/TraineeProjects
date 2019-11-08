@@ -1,13 +1,15 @@
 import React, { PureComponent } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import COLORS from '../../Constants/Colors';
+import COLORS from '../../utils/Colors'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
 Ionicons.loadFont()
 
 import { HeaderTop } from './HeaderTop'
 import { MidView } from './MidView'
+
 
 class MainScreen extends PureComponent {
     constructor(props) {

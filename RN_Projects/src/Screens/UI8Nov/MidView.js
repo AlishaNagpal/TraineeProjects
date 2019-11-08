@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import COLORS from '../../Constants/Colors';
+import COLORS from '../../utils/Colors';
 
 
 export const MidView = React.memo(function pureFunction() {

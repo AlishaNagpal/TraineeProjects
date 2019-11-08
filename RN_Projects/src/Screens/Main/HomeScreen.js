@@ -2,8 +2,10 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, StatusBar, ScrollView } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import style from '../../Constants/style'
-import COLORS from '../../Constants/Colors'
+
+import style from '../../utils/Colors'
+import COLORS from '../../utils/style'
+
 import Icon from 'react-native-vector-icons/Ionicons'
 Icon.loadFont()
 

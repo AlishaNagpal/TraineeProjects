@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import COLORS from '../../Constants/Colors';
+import COLORS from '../../utils/Colors';
 
 export const HeaderTop = React.memo(function pureFunction() {
   return (
