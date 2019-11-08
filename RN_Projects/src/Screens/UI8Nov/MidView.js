@@ -7,7 +7,7 @@ export const MidView = React.memo(function pureFunction() {
 
     balanceComponent = (key, value) => {
         return (
-            <View style={{ flexDirection: 'column', paddingRight: 20 }} >
+            <View style={{ flexDirection: 'column', paddingRight: vw(30) }} >
                 <Text style={styles.componentText} >
                     {key}
                 </Text>
@@ -24,13 +24,13 @@ export const MidView = React.memo(function pureFunction() {
             <View style={{ flexDirection: 'column', top: vh(70), paddingLeft: vw(30) }}>
                 <Image
                     source={image1}
-                    style={{ height: vh(30), width: vw(30), alignSelf: 'center', borderRadius: 20 }}
+                    style={{ height: vh(30), width: vw(30), alignSelf: 'center', borderRadius: vw(20) }}
                 />
                 <Image
                     source={image2}
                     style={{ height: vh(15), width: vw(15), position: 'absolute', top: vh(20), left: vw(38) }}
                 />
-                <Text style={{ top: vh(10), color: Colors.grayishBlue, fontSize: 12 }} >
+                <Text style={{ top: vh(10), color: Colors.grayishBlue, fontSize: vw(12) }} >
                     {text}
                 </Text>
             </View>
@@ -41,14 +41,14 @@ export const MidView = React.memo(function pureFunction() {
         return (
             <View style={styles.addDataView} >
                 <View style={{ flexDirection: 'column' }} >
-                    <Text style={{fontSize:14}} >
+                    <Text style={{fontSize:vw(14)}} >
                         Add Relative
                     </Text>
-                    <Text style={{fontSize:12, color: Colors.darkGray}} >
+                    <Text style={{fontSize:vw(12), color: Colors.darkGray}} >
                         {date}
                     </Text>
                 </View>
-                <Text style={{fontSize:14, color: Colors.red}} >
+                <Text style={{fontSize:vw(14), color: Colors.red}} >
                     4,000,000 VND
                 </Text>
             </View>
@@ -102,14 +102,14 @@ export const MidView = React.memo(function pureFunction() {
 const styles = StyleSheet.create({
     headerText: {
         color: Colors.darkBlueText,
-        fontSize: 22,
+        fontSize: vw(22),
         fontWeight: 'bold',
         top: vh(30),
         left: vw(20)
     },
     buttonStyle: {
         backgroundColor: Colors.darkGreenCyan,
-        borderRadius: 20,
+        borderRadius: vw(20),
         justifyContent: 'center',
         alignItems: 'center',
         top: vh(30),
@@ -120,20 +120,19 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         color: Colors.white,
-        paddingHorizontal : vw(5),
-        fontSize: 14,
+        fontSize: vw(14),
         fontWeight: 'bold',
     },
     componentText: {
         color: Colors.balanceText,
-        fontSize: 12,
+        fontSize: vw(12),
         fontWeight: 'bold',
         paddingBottom: vh(10),
         paddingLeft: vw(20)
     },
     componentText2: {
         color: Colors.darkGreenCyan,
-        fontSize: 20,
+        fontSize: vh(20),
         fontWeight: 'bold',
         paddingLeft: vw(20)
     },

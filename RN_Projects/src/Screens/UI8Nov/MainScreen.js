@@ -33,10 +33,10 @@ class MainScreen extends PureComponent {
                 <View style={{ flex: 0.7 }}>
                     <View style={styles.lowerTab1} >
                         <View style={styles.tabView}>
-                            <Text style={{ fontSize: 16, fontWeight: '500' }} >
+                            <Text style={{ fontSize: vw(16), fontWeight: '500' }} >
                                 Health and Beauty
                             </Text>
-                            <Text style={{ fontSize: 15, fontWeight: '400' }} >
+                            <Text style={{ fontSize: vw(15), fontWeight: '400' }} >
                                 5,000,000 VND
                             </Text>
                         </View>
@@ -47,10 +47,10 @@ class MainScreen extends PureComponent {
                     <View style={styles.lowerTab2} >
 
                         <View style={styles.tabView}>
-                            <Text style={{ fontSize: 16, fontWeight: '600', color: Colors.white }} >
+                            <Text style={{ fontSize: vw(16), fontWeight: '600', color: Colors.white }} >
                                 Course and Training
                             </Text>
-                            <Text style={{ fontSize: 15, fontWeight: '400', color: Colors.white }} >
+                            <Text style={{ fontSize: vw(15), fontWeight: '400', color: Colors.white }} >
                                 2,000,000 VND
                             </Text>
                         </View>
@@ -61,7 +61,7 @@ class MainScreen extends PureComponent {
                 <View style={{ flex: 0.7 }}>
                     <View style={styles.lowerTab3} >
                         <View style={styles.tabView}>
-                            <Text style={{ fontSize: 16, fontWeight: '600' }} >
+                            <Text style={{ fontSize: vw(16), fontWeight: '600' }} >
                                 Buisness Trip Cost
                             </Text>
                         </View>
@@ -87,22 +87,22 @@ const styles = StyleSheet.create({
     },
     openedTab: {
         backgroundColor: Colors.paleOrange,
-        borderRadius: 20,
-        height: vh(450)
+        borderRadius: vw(20),
+        height: vh(450),
     },
     lowerTab1: {
         height: vh(100),
-        borderRadius: 20,
+        borderRadius: vw(20),
         backgroundColor: Colors.softRed,
     },
     lowerTab2: {
         height: vh(100),
-        borderRadius: 20,
+        borderRadius: vw(20),
         backgroundColor: Colors.veryDarkBlue
     },
     lowerTab3: {
         height: vh(100),
-        borderRadius: 20,
+        borderRadius: vw(20),
         backgroundColor: Colors.grayishOrange
     },
     tabView: {
@@ -133,7 +133,7 @@ export default createBottomTabNavigator(
                 }
 
                 // You can return any component that you like here!
-                return <IconComponent name={iconName} size={30} color={tintColor}
+                return <IconComponent name={iconName} size={vh(30)} color={tintColor}
                 style={{marginTop:5}} />;
             },
         }),

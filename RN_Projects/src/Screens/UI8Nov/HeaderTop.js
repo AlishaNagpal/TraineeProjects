@@ -13,10 +13,10 @@ export const HeaderTop = React.memo(function pureFunction() {
           />
         </View>
         <View style={styles.textView}>
-          <Text style={{color: Colors.white, fontSize:16, fontWeight:'bold'}} >
+          <Text style={{color: Colors.white, fontSize:vh(16), fontWeight:'bold'}} >
             Marcus Hoang
           </Text>
-          <Text style={{color: Colors.veryLightGray, fontSize:12, fontWeight:'bold'}} >
+          <Text style={{color: Colors.veryLightGray, fontSize:vh(12), fontWeight:'bold'}} >
             Level 3
           </Text>
         </View>
@@ -24,6 +24,7 @@ export const HeaderTop = React.memo(function pureFunction() {
       <Image 
         source = {require('../../Assets/Images/ic_cloud.png')}
         style={styles.cloudImage}
+        resizeMode = 'contain'
         />
     </View>
   );
@@ -31,16 +32,16 @@ export const HeaderTop = React.memo(function pureFunction() {
 
 const styles = StyleSheet.create({
   imageStyle: {
-    height: vh(40),
+    height: vw(40),
     width: vw(40),
     borderRadius: vw(20),
   },
   imageView: {
     backgroundColor: Colors.darkGreenCyan,
     borderColor: Colors.white,
-    borderRadius: vh(25),
-    borderWidth: 2,
-    height: vh(50),
+    borderRadius: vw(25),
+    borderWidth: vw(2),
+    height: vw(50),
     width: vw(50),
     top: vh(40),
     left: vw(30),
