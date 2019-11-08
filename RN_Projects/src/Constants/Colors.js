@@ -6,13 +6,18 @@ const COLORS = {
     darkBlue: '#204b64',
     moderateBlue: '#3d8ebd',
     darkGreenCyan: '#1d886f',
-    paleOrange: '#fff7f4',
+    paleOrange: '#FFF8F5',
     softOrange: '#fee5c3',
     softRed: '#fdcad6',
     veryDarkBlue: '#094054',
     grayishOrange: '#f9dece',
     cloud: '#f9dece',
     veryLightGray: '#dbdbdb',
+    darkBlueText:'#000048',
+    balanceText:'#C3978A',
+    darkGray: '#a9a9a9',
+    grayishBlue: '#7d7f8b',
+    red: '#C60B03'
 }
 
 export default COLORS;
