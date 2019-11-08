@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   imageStyle: {
     height: vh(40),
     width: vw(40),
-    borderRadius: 20,
+    borderRadius: vw(20),
   },
   imageView: {
     backgroundColor: Colors.darkGreenCyan,

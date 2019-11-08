@@ -84,14 +84,14 @@ export const MidView = React.memo(function pureFunction() {
             </View>
 
             <View style={styles.seeAllStyle} >
-                <Text style={[styles.componentText, { top: vh(10) }]} > History</Text>
+                <Text style={[styles.componentText,{top:vh(10)}]} > History</Text>
                 <TouchableOpacity>
                     <Text style={styles.seeAllButton} >
                         See all
                     </Text>
                 </TouchableOpacity>
             </View>
-            <View style={{top:vh(70)}}>
+            <View style={{top:vh(50)}}>
             {this.addData('13/06/2019')}
             {this.addData('11/06/2019')}
             </View>
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         color: Colors.white,
+        paddingHorizontal : vw(5),
         fontSize: 14,
         fontWeight: 'bold',
     },
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
     },
     seeAllStyle: {
         flexDirection: 'row',
-        top: vh(70),
+        top: vh(60),
         justifyContent: 'space-between',
         paddingRight: vw(20),
         alignItems: 'center'
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginLeft: vw(20),
         marginRight: vw(20),
-        marginBottom:vh(20),
+        marginBottom:vh(10),
         top:vh(20)
     }
 })
