@@ -1,25 +1,24 @@
 import { StyleSheet } from 'react-native';
-import COLORS from '../utils/Colors'
+import Colors from './Colors'
 
-export default StyleSheet.create({
+export default Styles = StyleSheet.create({
     buttonContainer: {
         justifyContent: 'center',
-        backgroundColor: COLORS.powderBlue,
+        backgroundColor: Colors.powderBlue ,
         borderRadius: 20,
         borderWidth: 0.5,
         borderColor: 'lightgray',
         margin: 10,
         alignItems: 'center',
-        shadowColor: COLORS.veryLightGray,
-        shadowOpacity:0.5
+        shadowColor: Colors.veryLightGray,
+        shadowOpacity: 0.5
     },
     buttonStyles: {
         fontWeight: 'bold',
         fontSize: 20,
         padding: 10,
-        color: COLORS.darkBlue
+        color: Colors.darkBlue
     },
-
     text: {
         fontSize: 22,
         color: 'powderblue',

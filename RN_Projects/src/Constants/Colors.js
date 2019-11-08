@@ -1,4 +1,4 @@
-const COLORS = {
+const Colors = {
     white: '#fff',
     black: '#000',
     powderBlue: '#b0e0e6',
@@ -20,4 +20,4 @@ const COLORS = {
     red: '#C60B03'
 }
 
-export default COLORS;
+export default Colors;

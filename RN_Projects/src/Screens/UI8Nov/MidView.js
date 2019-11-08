@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import COLORS from '../../utils/Colors';
+import {Colors, vh, vw} from '../../Constants'
 
 
 export const MidView = React.memo(function pureFunction() {
@@ -21,16 +21,16 @@ export const MidView = React.memo(function pureFunction() {
 
     relativeComponent = (image1, image2, text) => {
         return (
-            <View style={{ flexDirection: 'column', top: 70, paddingLeft: 30 }}>
+            <View style={{ flexDirection: 'column', top: vh(70), paddingLeft: vw(30) }}>
                 <Image
                     source={image1}
-                    style={{ height: 30, width: 30, alignSelf: 'center', borderRadius: 20 }}
+                    style={{ height: vh(30), width: vw(30), alignSelf: 'center', borderRadius: 20 }}
                 />
                 <Image
                     source={image2}
-                    style={{ height: 15, width: 15, position: 'absolute', top: 20, left: 38 }}
+                    style={{ height: vh(15), width: vw(15), position: 'absolute', top: vh(20), left: vw(38) }}
                 />
-                <Text style={{ top: 10, color: COLORS.grayishBlue, fontSize: 12 }} >
+                <Text style={{ top: vh(10), color: Colors.grayishBlue, fontSize: 12 }} >
                     {text}
                 </Text>
             </View>
@@ -44,11 +44,11 @@ export const MidView = React.memo(function pureFunction() {
                     <Text style={{fontSize:14}} >
                         Add Relative
                     </Text>
-                    <Text style={{fontSize:12, color: COLORS.darkGray}} >
+                    <Text style={{fontSize:12, color: Colors.darkGray}} >
                         {date}
                     </Text>
                 </View>
-                <Text style={{fontSize:14, color: COLORS.red}} >
+                <Text style={{fontSize:14, color: Colors.red}} >
                     4,000,000 VND
                 </Text>
             </View>
@@ -67,11 +67,11 @@ export const MidView = React.memo(function pureFunction() {
                     </Text>
                 </TouchableOpacity>
             </View>
-            <View style={{ flexDirection: 'row', top: 50 }} >
+            <View style={{ flexDirection: 'row', top: vh(50) }} >
                 {this.balanceComponent('Balance', '2,000,000VND')}
                 {this.balanceComponent('Balance Used', '4,320,000VND')}
             </View>
-            <Text style={[styles.componentText, { top: 70 }]} >
+            <Text style={[styles.componentText, { top: vh(70) }]} >
                 Relatives
                 </Text>
             <View style={{ flexDirection: 'row' }} >
@@ -84,14 +84,14 @@ export const MidView = React.memo(function pureFunction() {
             </View>
 
             <View style={styles.seeAllStyle} >
-                <Text style={[styles.componentText, { top: 10 }]} > History</Text>
+                <Text style={[styles.componentText, { top: vh(10) }]} > History</Text>
                 <TouchableOpacity>
                     <Text style={styles.seeAllButton} >
                         See all
                     </Text>
                 </TouchableOpacity>
             </View>
-            <View style={{top:70}}>
+            <View style={{top:vh(70)}}>
             {this.addData('13/06/2019')}
             {this.addData('11/06/2019')}
             </View>
@@ -101,65 +101,65 @@ export const MidView = React.memo(function pureFunction() {
 
 const styles = StyleSheet.create({
     headerText: {
-        color: COLORS.darkBlueText,
+        color: Colors.darkBlueText,
         fontSize: 22,
         fontWeight: 'bold',
-        top: 30,
-        left: 20
+        top: vh(30),
+        left: vw(20)
     },
     buttonStyle: {
-        backgroundColor: COLORS.darkGreenCyan,
+        backgroundColor: Colors.darkGreenCyan,
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        top: 30,
-        left: 80,
-        padding: 5
+        top: vh(30),
+        left: vw(80),
+        padding: vh(5)
     },
     buttonTextStyle: {
         justifyContent: 'center',
         alignItems: 'center',
-        color: COLORS.white,
+        color: Colors.white,
         fontSize: 14,
         fontWeight: 'bold',
     },
     componentText: {
-        color: COLORS.balanceText,
+        color: Colors.balanceText,
         fontSize: 12,
         fontWeight: 'bold',
-        paddingBottom: 10,
-        paddingLeft: 20
+        paddingBottom: vh(10),
+        paddingLeft: vw(20)
     },
     componentText2: {
-        color: COLORS.darkGreenCyan,
+        color: Colors.darkGreenCyan,
         fontSize: 20,
         fontWeight: 'bold',
-        paddingLeft: 20
+        paddingLeft: vw(20)
     },
     cylindricalView: {
-        height: 80,
-        width: 2,
-        backgroundColor: COLORS.darkGray,
-        top: 55,
-        left: 20
+        height: vh(80),
+        width: vw(2),
+        backgroundColor: Colors.darkGray,
+        top: vh(55),
+        left: vw(20)
     },
     seeAllStyle: {
         flexDirection: 'row',
-        top: 70,
+        top: vh(70),
         justifyContent: 'space-between',
-        paddingRight: 20,
+        paddingRight: vw(20),
         alignItems: 'center'
     },
     seeAllButton: {
-        color: COLORS.black,
+        color: Colors.black,
         textDecorationLine: 'underline'
     },
     addDataView: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginLeft: 20,
-        marginRight: 20,
-        marginBottom:20,
-        top:20
+        marginLeft: vw(20),
+        marginRight: vw(20),
+        marginBottom:vh(20),
+        top:vh(20)
     }
 })

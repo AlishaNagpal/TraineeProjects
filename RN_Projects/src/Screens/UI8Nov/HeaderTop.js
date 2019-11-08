@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import COLORS from '../../utils/Colors';
+import {Colors, vw, vh} from '../../Constants'
 
 export const HeaderTop = React.memo(function pureFunction() {
   return (
@@ -13,10 +13,10 @@ export const HeaderTop = React.memo(function pureFunction() {
           />
         </View>
         <View style={styles.textView}>
-          <Text style={{color: COLORS.white, fontSize:16, fontWeight:'bold'}} >
+          <Text style={{color: Colors.white, fontSize:16, fontWeight:'bold'}} >
             Marcus Hoang
           </Text>
-          <Text style={{color: COLORS.veryLightGray, fontSize:12, fontWeight:'bold'}} >
+          <Text style={{color: Colors.veryLightGray, fontSize:12, fontWeight:'bold'}} >
             Level 3
           </Text>
         </View>
@@ -31,32 +31,32 @@ export const HeaderTop = React.memo(function pureFunction() {
 
 const styles = StyleSheet.create({
   imageStyle: {
-    height: 40,
-    width: 40,
+    height: vh(40),
+    width: vw(40),
     borderRadius: 20,
   },
   imageView: {
-    backgroundColor: COLORS.darkGreenCyan,
-    borderColor: COLORS.white,
-    borderRadius: 25,
+    backgroundColor: Colors.darkGreenCyan,
+    borderColor: Colors.white,
+    borderRadius: vh(25),
     borderWidth: 2,
-    height: 50,
-    width: 50,
-    top: 40,
-    left: 30,
+    height: vh(50),
+    width: vw(50),
+    top: vh(40),
+    left: vw(30),
     alignItems: 'center',
     justifyContent: 'center'
   },
   textView: {
     flexDirection: 'column',
-    marginTop:50,
-    marginLeft: 40
+    marginTop:vh(50),
+    marginLeft: vw(40)
   },
   cloudImage:{
-    height:60, 
-    width:120, 
-    top:40,
-    left:260, 
+    height:vh(60), 
+    width:vw(120), 
+    top:vh(40),
+    left:vw(260), 
     position:'absolute'
   }
 })

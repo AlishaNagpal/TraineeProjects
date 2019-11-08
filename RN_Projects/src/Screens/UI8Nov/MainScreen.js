@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import COLORS from '../../utils/Colors'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 
@@ -9,6 +8,7 @@ Ionicons.loadFont()
 
 import { HeaderTop } from './HeaderTop'
 import { MidView } from './MidView'
+import { Colors, vh,vw } from '../../Constants';
 
 
 class MainScreen extends PureComponent {
@@ -47,10 +47,10 @@ class MainScreen extends PureComponent {
                     <View style={styles.lowerTab2} >
 
                         <View style={styles.tabView}>
-                            <Text style={{ fontSize: 16, fontWeight: '600', color: COLORS.white }} >
+                            <Text style={{ fontSize: 16, fontWeight: '600', color: Colors.white }} >
                                 Course and Training
                             </Text>
-                            <Text style={{ fontSize: 15, fontWeight: '400', color: COLORS.white }} >
+                            <Text style={{ fontSize: 15, fontWeight: '400', color: Colors.white }} >
                                 2,000,000 VND
                             </Text>
                         </View>
@@ -79,36 +79,36 @@ class MainScreen extends PureComponent {
 const styles = StyleSheet.create({
     mainView: {
         flex: 1,
-        backgroundColor: COLORS.darkGreenCyan
+        backgroundColor: Colors.darkGreenCyan
     },
     header: {
         flex: 1,
-        backgroundColor: COLORS.darkGreenCyan
+        backgroundColor: Colors.darkGreenCyan
     },
     openedTab: {
-        backgroundColor: COLORS.paleOrange,
+        backgroundColor: Colors.paleOrange,
         borderRadius: 20,
-        height: '110%'
+        height: vh(450)
     },
     lowerTab1: {
-        height: '130%',
+        height: vh(100),
         borderRadius: 20,
-        backgroundColor: COLORS.softRed,
+        backgroundColor: Colors.softRed,
     },
     lowerTab2: {
-        height: '130%',
+        height: vh(100),
         borderRadius: 20,
-        backgroundColor: COLORS.veryDarkBlue
+        backgroundColor: Colors.veryDarkBlue
     },
     lowerTab3: {
-        height: '130%',
+        height: vh(100),
         borderRadius: 20,
-        backgroundColor: COLORS.grayishOrange
+        backgroundColor: Colors.grayishOrange
     },
     tabView: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        margin: 20,
+        margin: vw(18),
         alignItems: 'center'
     }
 })

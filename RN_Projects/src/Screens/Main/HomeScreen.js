@@ -2,13 +2,9 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, StatusBar, ScrollView } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-
-import style from '../../utils/Colors'
-import COLORS from '../../utils/style'
-
+import { vw, vh, Styles, Colors } from '../../Constants';
 import Icon from 'react-native-vector-icons/Ionicons'
 Icon.loadFont()
-
 import MainScreen from '../UI8Nov/MainScreen'
 
 const array = [
@@ -29,22 +25,22 @@ class HomeScreen extends React.Component {
     )
   })
 
-  callScreen = (screen) =>{
+  callScreen = (screen) => {
     this.props.navigation.navigate(screen)
   }
 
-  makeButton = (screen,title) =>{
-    return(
+  makeButton = (screen, title) => {
+    return (
       <TouchableOpacity onPress={() => this.callScreen(screen)}>
-            <View style={style.buttonContainer} >
-              <Text style={style.buttonStyles} >
-                {title} 
-              </Text>
-            </View>
-          </TouchableOpacity>
+        <View style={Styles.buttonContainer} >
+          <Text style={Styles.buttonStyles} >
+            {title}
+          </Text>
+        </View>
+      </TouchableOpacity>
     )
   }
-  
+
   render() {
     return (
       <View style={styles.mainView}>
@@ -52,8 +48,8 @@ class HomeScreen extends React.Component {
         <Text style={styles.info}>
           Click Any Button To View Different Projects!
         </Text>
-        <ScrollView style={{ margin: 15 }} >
-          
+        <ScrollView style={{ margin: vh(15) }} >
+
           <View>
             {this.makeButton(array[0]['screen'], array[0]['title'])}
           </View>
@@ -70,7 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   info: {
-    color: COLORS.darkBluishCyan,
+    color: Colors.darkBluishCyan ,
     fontWeight: 'bold',
     fontSize: 22,
   },
@@ -88,7 +84,7 @@ const AppNavigator = createStackNavigator({
     initialRouteName: 'Home',
     defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: {
-        backgroundColor: COLORS.darkBlue,
+        backgroundColor: Colors.darkBlue,
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
