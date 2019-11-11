@@ -17,7 +17,11 @@ const Colors = {
     balanceText:'#C3978A',
     darkGray: '#a9a9a9',
     grayishBlue: '#7d7f8b',
-    red: '#C60B03'
+    red: '#C60B03',
+    verySoftRed: '#fdc8d3',
+    verySoftOrange: '#fcbea6',
+    grayishMagenta: '#dfb8d8',
+    softRed2: '#f0637d'
 }
 
 export default Colors;

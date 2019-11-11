@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet, TextInput, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, StyleSheet, TextInput, Alert, ImageBackground } from 'react-native';
 import { observer } from 'mobx-react';
 
 import ToDoList from '../../Store/ToDoList';
@@ -7,7 +7,7 @@ import { vw, vh, Styles, Colors } from '../../Constants';
 
 import Icons from 'react-native-vector-icons/Ionicons'
 Icons.loadFont()
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
 @observer
@@ -29,39 +29,44 @@ export default class MobXDemo extends Component {
 
   render() {
     return (
-      <View>
+      <KeyboardAwareScrollView>
+      <ImageBackground
+        source={require('../../Assets/Images/todo.jpg')}
+        style={{ height: vh(820), width: vw(375) }}
+      >
+        <View>
+          <FlatList
+            ref={ref => this.flatList = ref}
+            onContentSizeChange={() => this.flatList.scrollToEnd({ animated: true })}
+            // onLayout={() => this.flatList.scrollToEnd({ animated: true })}
+            style={styles.flatList}
+            data={ToDoList.Tasks.slice()}
+            keyExtractor={(item, index) => Math.random().toString()}
+            renderItem={({ item }) => (
+              <View style={Styles.container}>
+                <Text style={Styles.text} > {item} </Text>
+              </View>
+            )} />
 
-        <FlatList
-          ref={ref => this.flatList = ref}
-          onContentSizeChange={() => this.flatList.scrollToEnd({ animated: true })}
-          // onLayout={() => this.flatList.scrollToEnd({ animated: true })}
-          style={styles.flatList}
-          data={ToDoList.Tasks.slice()}
-          keyExtractor={(item, index) => Math.random().toString()}
-          renderItem={({ item }) => (
-            <View style={Styles.container}>
-              <Text style={Styles.text} > {item} </Text>
-            </View>
-          )} />
-
-        <View style={styles.showingData} >
-          <TextInput
-            numberOfLines={1}
-            onChangeText={(text) => ToDoList.item = text}
-            clearButtonMode='while-editing'
-            placeholder="Enter Your New To Do Task"
-            value={ToDoList.item}
-            onSubmitEditing={() => this.submit()}
-            style={styles.textInput}
-            ref={ref => this.input = ref}
-          />
-
-          <TouchableOpacity onPress={() => this.addingData()}
-            style={styles.buttonStyles}>
-            <Text> <Icons name='ios-add-circle' size={30} color={Colors.white} /> </Text>
-          </TouchableOpacity>
+          <View style={styles.showingData} >
+            <TextInput
+              numberOfLines={1}
+              onChangeText={(text) => ToDoList.item = text}
+              clearButtonMode='while-editing'
+              placeholder="Enter Your New To Do Task"
+              value={ToDoList.item}
+              onSubmitEditing={() => this.submit()}
+              style={styles.textInput}
+              ref={ref => this.input = ref}
+            />
+            <TouchableOpacity onPress={() => this.addingData()}
+              style={styles.buttonStyles}>
+              <Text> <Icons name='ios-add-circle' size={30} color={Colors.white} /> </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      </ImageBackground>
+      </KeyboardAwareScrollView>
     );
   }
 }
@@ -76,7 +81,7 @@ const styles = StyleSheet.create({
   },
   buttonStyles: {
     justifyContent: 'center',
-    backgroundColor: '#b0e0e6',
+    backgroundColor: Colors.darkBlue,
     borderRadius: vh(20),
     borderWidth: vw(0.5),
     borderColor: 'lightgray',
@@ -87,7 +92,7 @@ const styles = StyleSheet.create({
   textInput: {
     marginLeft: vw(20),
     borderRadius: vh(20),
-    borderColor: 'lightgray',
+    borderColor: Colors.darkBlue,
     borderWidth: vw(0.7),
     width: vw(270),
     paddingLeft: vw(20),

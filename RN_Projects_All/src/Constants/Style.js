@@ -31,7 +31,7 @@ export default Styles = StyleSheet.create({
     },
     container: {
         marginTop: vh(20),
-        backgroundColor: Colors.softRed,
+        backgroundColor: Colors.softRed2,
         borderWidth: vw(0.5),
         borderColor: Colors.veryLightGray,
         marginLeft: vw(20),
