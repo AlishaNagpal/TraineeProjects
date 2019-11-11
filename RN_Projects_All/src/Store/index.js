@@ -1,5 +1,9 @@
 import ToDoList from '../Store/ToDoList'
 
-export{
+const obj = {
     ToDoList
+}
+
+export{
+    ...obj
 }

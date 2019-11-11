@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import {ToDoList} from '../../Store';
+import { View, Text, TouchableOpacity } from 'react-native';
+import ToDoList from '../../Store/ToDoList';
+import { observer } from 'mobx-react';
 
 
-
+@observer
 export default class MobXDemo extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +15,9 @@ export default class MobXDemo extends Component {
   render() {
     return (
       <View>
-        <Text> {ToDoList.Tasks } </Text>
+        <TouchableOpacity onPress = {()=> {ToDoList.add()}} > 
+            <Text> {ToDoList.Tasks } </Text>
+        </TouchableOpacity>
       </View>
     );
   }

@@ -1,11 +1,12 @@
-import {observable,action} from 'mobx'
+import { observable, action } from 'mobx'
 
-class ToDoList{
+class ToDoList {
 
-   @observable Tasks = 'hcvqjhdc'
-   @action add(taskToDo){
-       this.Tasks.append(taskToDo)
+    @observable Tasks  = 'Hello'
+    @action add() {
+        this.Tasks = this.Tasks + this.Tasks
     }
+    
 }
 
-export default ToDoList;
+export default new ToDoList();
