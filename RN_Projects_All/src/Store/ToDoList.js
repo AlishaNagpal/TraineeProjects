@@ -2,11 +2,11 @@ import { observable, action } from 'mobx'
 
 class ToDoList {
 
-    @observable Tasks  = 'Hello'
+    @observable item = ''
+    @observable Tasks  = []
     @action add() {
-        this.Tasks = this.Tasks + this.Tasks
+        this.Tasks.push(this.item)
     }
-    
 }
 
 export default new ToDoList();

@@ -1,36 +1,53 @@
 import { StyleSheet } from 'react-native';
 import Colors from './Colors'
+import {vh,vw} from './Dimension'
 
 export default Styles = StyleSheet.create({
     buttonContainer: {
         justifyContent: 'center',
         backgroundColor: Colors.powderBlue ,
-        borderRadius: 20,
-        borderWidth: 0.5,
+        borderRadius: vh(20),
+        borderWidth: vw(0.5),
         borderColor: 'lightgray',
-        margin: 10,
+        margin: vh(10),
         alignItems: 'center',
         shadowColor: Colors.veryLightGray,
-        shadowOpacity: 0.5
+        shadowOpacity: vw(0.5)
     },
     buttonStyles: {
         fontWeight: 'bold',
-        fontSize: 20,
-        padding: 10,
+        fontSize: vh(20),
+        padding: vh(10),
         color: Colors.darkBlue
     },
-    text: {
-        fontSize: 22,
-        color: 'powderblue',
-        fontWeight: 'bold'
-    },
     textInput: {
-        height: 50,
-        width: 200,
+        height: vh(50),
+        width: vw(200),
         backgroundColor: '#f1f1f1',
-        fontSize: 16,
+        fontSize: vh(16),
         fontWeight: '500',
-        paddingLeft: 10,
-        borderRadius: 10
-    }
+        paddingLeft: vw(10),
+        borderRadius: vh(10)
+    },
+    container: {
+        marginTop: vh(20),
+        backgroundColor: Colors.softRed,
+        borderWidth: vw(0.5),
+        borderColor: Colors.veryLightGray,
+        marginLeft: vw(20),
+        marginRight: vw(20),
+        borderRadius: vh(20),
+        alignItems: 'center',
+        shadowColor: Colors.veryLightGray,
+        shadowOffset: { height: vh(5), width: vw(5) },
+        shadowOpacity: vh(0.2)
+      },
+      text: {
+        paddingBottom: vh(10),
+        paddingLeft: vw(20),
+        fontSize: vh(16),
+        color: 'white',
+        fontWeight: 'bold',
+        paddingTop: vh(10)
+      },
 })
