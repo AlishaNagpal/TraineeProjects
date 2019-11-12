@@ -21,7 +21,8 @@ const Colors = {
     verySoftRed: '#fdc8d3',
     verySoftOrange: '#fcbea6',
     grayishMagenta: '#dfb8d8',
-    softRed2: '#f0637d'
+    softRed2: '#f0637d',
+    leafyGreen: '#506712'
 }
 
 export default Colors;

@@ -1,9 +1,7 @@
 import ToDoList from '../Store/ToDoList'
-
-const obj = {
-    ToDoList
-}
+import APIHitMobX from '../Store/APIHitMobX'
 
 export{
-    ...obj
+    ToDoList,
+    APIHitMobX
 }
