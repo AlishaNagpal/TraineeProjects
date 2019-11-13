@@ -3,18 +3,8 @@ import { View, TouchableOpacity } from 'react-native';
 import { Colors, vh, vw } from '../Constants';
 
 export default class CheckBox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {isCheck: false};
-  }
-
   checkClicked = async () => {
-    await this.setState(prevState => ({
-        isCheck: !prevState.isCheck,
-      })); // setState is async function.
-    
-    // Call function type prop with return values.
-    this.props.clicked && this.props.clicked(this.props.value, this.state.isCheck);
+    this.props.clicked(this.props.id,this.props.isCheck );
   }
 
   render() {
@@ -25,14 +15,14 @@ export default class CheckBox extends Component {
           width: vh(24),
           borderWidth: vw(2),
           borderRadius: vh(8),
-          borderColor: Colors.balanceText,
+          borderColor: Colors.softRed2,
           alignItems: 'center',
           justifyContent: 'center',
         }}>
           <View style={{
-            height: 12,
-            width: 12,
-            backgroundColor: this.state.isCheck ? Colors.balanceText : Colors.white,
+            height: vh(12),
+            width: vh(12),
+            backgroundColor: this.props.isCheck ? Colors.softRed2 : Colors.white,
           }} />
         </View>
       </TouchableOpacity>

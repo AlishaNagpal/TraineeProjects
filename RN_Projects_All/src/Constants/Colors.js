@@ -22,7 +22,7 @@ const Colors = {
     verySoftOrange: '#fcbea6',
     grayishMagenta: '#dfb8d8',
     softRed2: '#f0637d',
-    leafyGreen: '#506712'
+    leafyGreen: '#506712',
 }
 
 export default Colors;

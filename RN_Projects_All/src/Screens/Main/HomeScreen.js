@@ -1,18 +1,19 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, StatusBar, ScrollView } from 'react-native';
-
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-
-import { vw, vh, Styles, Colors } from '../../Constants';
-
 import Icon from 'react-native-vector-icons/Ionicons'
 Icon.loadFont()
+
+//Custom Imports 
+import { vw, vh, Styles, Colors } from '../../Constants';
 
 import MainScreen from '../UI8Nov/MainScreen'
 import MobXDemo from '../MobXDemo/MobXDemo'
 import MainAPIScreen from '../APIWithMobX/MainAPIScreen';
-import showingSelected from '../APIWithMobX/showingSelected'; 
+import showingSelected from '../APIWithMobX/showingSelected';
+import ToDoListContainer from '../ToDoList/ToDoListContainer'
+import SplashToDoList from '../ToDoList/SplashToDoList'
 
 const array = [
   {
@@ -26,6 +27,10 @@ const array = [
   {
     screen: 'APIHit',
     title: 'APIHit MobX >'
+  },
+  {
+    screen: 'ToDoSplash',
+    title: 'ToDoList Part2 >'
   }
 ]
 
@@ -69,6 +74,7 @@ class HomeScreen extends React.Component {
             {this.makeButton(array[0]['screen'], array[0]['title'])}
             {this.makeButton(array[1]['screen'], array[1]['title'])}
             {this.makeButton(array[2]['screen'], array[2]['title'])}
+            {this.makeButton(array[3]['screen'], array[3]['title'])}
           </View>
 
         </ScrollView>
@@ -98,7 +104,9 @@ const AppNavigator = createStackNavigator({
   UI8Nov: { screen: MainScreen, navigationOptions: { header: null } },
   mobX: { screen: MobXDemo, navigationOptions: { title: 'TO DO LIST' } },
   APIHit: { screen: MainAPIScreen, navigationOptions: { title: 'API Data' } },
-  selected: {screen: showingSelected, navigationOptions: { title: 'Selected Items' } }
+  selected: {screen: showingSelected, navigationOptions: { title: 'Selected Items' } },
+  ToDo:{screen: ToDoListContainer, navigationOptions:{title: 'Your To Do List' }},
+  ToDoSplash: {screen: SplashToDoList, navigationOptions: { header: null }},
 },
   {
     initialRouteName: 'Home',

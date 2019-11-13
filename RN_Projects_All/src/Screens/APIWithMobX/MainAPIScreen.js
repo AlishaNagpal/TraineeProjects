@@ -30,6 +30,7 @@ export default class MainAPIScreen extends Component {
     hitApi() {
         axiosMethods.getRequest(apiPoints.pagingURL1, (dataResponse) => {
             APIHitMobX.dataResponse = dataResponse.results
+            console.log("bchkasdbc",dataResponse.results)
             APIHitMobX.loader = false
         })
     }
@@ -50,7 +51,8 @@ export default class MainAPIScreen extends Component {
     handleDelete = (item) => {
         let { checkSelected } = APIHitMobX;
         APIHitMobX.remove(item)
-        checkSelected.remove(item)
+        checkSelected.remove(item) 
+        //make it like the previous one that you wanted to do. 
     }
 
     toggleCheckBox = (id, isCheck) => {
@@ -94,7 +96,8 @@ export default class MainAPIScreen extends Component {
                     onEndReachedThreshold={0.01}
                     data={APIHitMobX.dataResponse.slice()}
                     keyExtractor={(item, index) => index.toString()}
-                    renderItem={({ item }) => (
+                    renderItem={({ item, index }) => (
+                        // console.log(item.cell),
                         <View style={[Styles.container, styles.containerStyle]}>
 
                             <Image

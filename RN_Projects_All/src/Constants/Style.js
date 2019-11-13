@@ -45,7 +45,7 @@ export default Styles = StyleSheet.create({
       text: {
         paddingBottom: vh(10),
         paddingLeft: vw(20),
-        fontSize: vh(16),
+        fontSize: vh(20),
         color: 'white',
         fontWeight: 'bold',
         paddingTop: vh(10)
