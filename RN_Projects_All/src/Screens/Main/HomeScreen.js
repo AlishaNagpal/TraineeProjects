@@ -15,6 +15,9 @@ import showingSelected from '../APIWithMobX/showingSelected';
 import ToDoListContainer from '../ToDoList/ToDoListContainer'
 import SplashToDoList from '../ToDoList/SplashToDoList'
 import facebookLogin from '../Social Logins/facebookLogin'
+import FacebookGraph from '../Social Logins/FacebookGraph'
+import Maps from '../Maps/Maps'
+
 
 const array = [
   {
@@ -36,6 +39,10 @@ const array = [
   {
     screen: 'fb',
     title: 'Social Logins >'
+  },
+  {
+    screen: 'map',
+    title: 'Maps >'
   },
 
 
@@ -83,6 +90,7 @@ class HomeScreen extends React.Component {
             {this.makeButton(array[2]['screen'], array[2]['title'])}
             {this.makeButton(array[3]['screen'], array[3]['title'])}
             {this.makeButton(array[4]['screen'], array[4]['title'])}
+            {this.makeButton(array[5]['screen'], array[5]['title'])}
           </View>
 
         </ScrollView>
@@ -116,6 +124,8 @@ const AppNavigator = createStackNavigator({
   ToDo: { screen: ToDoListContainer, navigationOptions: { title: 'Your To Do List' } },
   ToDoSplash: { screen: SplashToDoList, navigationOptions: { header: null } },
   fb: {screen: facebookLogin, navigationOptions:{ title: 'Social Logins' }},
+  fb2:{screen: FacebookGraph, navigationOptions:{ title: 'Social Logins' }},
+  map:{screen: Maps, navigationOptions:{ title: 'Maps' }},
 },
   {
     initialRouteName: 'Home',
