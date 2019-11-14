@@ -65,6 +65,22 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - Google-Maps-iOS-Utils (2.1.0):
+    - Google-Maps-iOS-Utils/Clustering (= 2.1.0)
+    - Google-Maps-iOS-Utils/Geometry (= 2.1.0)
+    - Google-Maps-iOS-Utils/Heatmap (= 2.1.0)
+    - Google-Maps-iOS-Utils/QuadTree (= 2.1.0)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (2.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (2.1.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (2.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (2.1.0):
+    - GoogleMaps
   - GoogleAppMeasurement (6.1.5):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -75,6 +91,11 @@ PODS:
   - GoogleDataTransportCCTSupport (1.2.1):
     - GoogleDataTransport (~> 3.0)
     - nanopb (~> 0.3.901)
+  - GoogleMaps (3.2.0):
+    - GoogleMaps/Maps (= 3.2.0)
+  - GoogleMaps/Base (3.2.0)
+  - GoogleMaps/Maps (3.2.0):
+    - GoogleMaps/Base
   - GoogleUtilities/AppDelegateSwizzler (6.3.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -275,6 +296,12 @@ PODS:
   - react-native-fbsdk/Share (1.1.1):
     - FBSDKShareKit (= 5.8)
     - React
+  - react-native-google-maps (0.26.1):
+    - Google-Maps-iOS-Utils (= 2.1.0)
+    - GoogleMaps (= 3.2.0)
+    - React
+  - react-native-maps (0.26.1):
+    - React
   - React-RCTActionSheet (0.61.4):
     - React-Core/RCTActionSheetHeaders (= 0.61.4)
   - React-RCTAnimation (0.61.4):
@@ -332,6 +359,8 @@ DEPENDENCIES:
   - Firebase/Core
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - Google-Maps-iOS-Utils (from `https://github.com/googlemaps/google-maps-ios-utils.git`, commit `d5ca417617170b9a0e4e83964e961bfaf9b26f1f`)
+  - GoogleMaps
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -344,6 +373,8 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
+  - react-native-google-maps (from `../node_modules/react-native-maps`)
+  - react-native-maps (from `../node_modules/react-native-maps`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -377,6 +408,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
+    - GoogleMaps
     - GoogleUtilities
     - nanopb
 
@@ -393,6 +425,9 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  Google-Maps-iOS-Utils:
+    :commit: d5ca417617170b9a0e4e83964e961bfaf9b26f1f
+    :git: https://github.com/googlemaps/google-maps-ios-utils.git
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -413,6 +448,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-fbsdk:
     :path: "../node_modules/react-native-fbsdk"
+  react-native-google-maps:
+    :path: "../node_modules/react-native-maps"
+  react-native-maps:
+    :path: "../node_modules/react-native-maps"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -446,6 +485,11 @@ EXTERNAL SOURCES:
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
+CHECKOUT OPTIONS:
+  Google-Maps-iOS-Utils:
+    :commit: d5ca417617170b9a0e4e83964e961bfaf9b26f1f
+    :git: https://github.com/googlemaps/google-maps-ios-utils.git
+
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
@@ -463,9 +507,11 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: ebd2ea79ee38db0cb5f5167b17a0d387e1cc7b6e
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
+  Google-Maps-iOS-Utils: c32891ff472eaaa1fca032beedafa1a013af7875
   GoogleAppMeasurement: 037f46d1d8ae8b312720f1042585ab961a1289e3
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
+  GoogleMaps: 5046d7edfe381c1a0b20fdaf293915a375c3122b
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   RCTRequired: f3b3fb6f4723e8e52facb229d0c75fdc76773849
@@ -478,6 +524,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 8dfb73b987afa9324e4009bdce62a18ce23d983c
   React-jsinspector: d15478d0a8ada19864aa4d1cc1c697b41b3fa92f
   react-native-fbsdk: b94a83971c496a35803f38b921aec6d637ba07b5
+  react-native-google-maps: 2e2e697dab576abd5809d78cd74e775865b62bf7
+  react-native-maps: 6e499eee4eabf422ba8b6f94e993cc768bf35153
   React-RCTActionSheet: 7369b7c85f99b6299491333affd9f01f5a130c22
   React-RCTAnimation: d07be15b2bd1d06d89417eb0343f98ffd2b099a7
   React-RCTBlob: 8e0b23d95c9baa98f6b0e127e07666aaafd96c34
@@ -495,6 +543,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: ba3d99dbee6c15ea6bbe3783d1f0cb1ffb79af0f
 
-PODFILE CHECKSUM: 6abd0a90e3168d0fe7a923dea6a2c849a3821858
+PODFILE CHECKSUM: 447870c30d068f8899d286cc9847d0b39e8bec79
 
 COCOAPODS: 1.8.3
