@@ -14,6 +14,7 @@ import MainAPIScreen from '../APIWithMobX/MainAPIScreen';
 import showingSelected from '../APIWithMobX/showingSelected';
 import ToDoListContainer from '../ToDoList/ToDoListContainer'
 import SplashToDoList from '../ToDoList/SplashToDoList'
+import facebookLogin from '../Social Logins/facebookLogin'
 
 const array = [
   {
@@ -31,7 +32,13 @@ const array = [
   {
     screen: 'ToDoSplash',
     title: 'ToDoList Part2 >'
-  }
+  },
+  {
+    screen: 'fb',
+    title: 'Social Logins >'
+  },
+
+
 ]
 
 class HomeScreen extends React.Component {
@@ -75,6 +82,7 @@ class HomeScreen extends React.Component {
             {this.makeButton(array[1]['screen'], array[1]['title'])}
             {this.makeButton(array[2]['screen'], array[2]['title'])}
             {this.makeButton(array[3]['screen'], array[3]['title'])}
+            {this.makeButton(array[4]['screen'], array[4]['title'])}
           </View>
 
         </ScrollView>
@@ -89,7 +97,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   info: {
-    color: Colors.darkBluishCyan ,
+    color: Colors.darkBluishCyan,
     fontWeight: 'bold',
     fontSize: 22,
   },
@@ -104,9 +112,10 @@ const AppNavigator = createStackNavigator({
   UI8Nov: { screen: MainScreen, navigationOptions: { header: null } },
   mobX: { screen: MobXDemo, navigationOptions: { title: 'TO DO LIST' } },
   APIHit: { screen: MainAPIScreen, navigationOptions: { title: 'API Data' } },
-  selected: {screen: showingSelected, navigationOptions: { title: 'Selected Items' } },
-  ToDo:{screen: ToDoListContainer, navigationOptions:{title: 'Your To Do List' }},
-  ToDoSplash: {screen: SplashToDoList, navigationOptions: { header: null }},
+  selected: { screen: showingSelected, navigationOptions: { title: 'Selected Items' } },
+  ToDo: { screen: ToDoListContainer, navigationOptions: { title: 'Your To Do List' } },
+  ToDoSplash: { screen: SplashToDoList, navigationOptions: { header: null } },
+  fb: {screen: facebookLogin, navigationOptions:{ title: 'Social Logins' }},
 },
   {
     initialRouteName: 'Home',

@@ -96,7 +96,7 @@ export default class ToDoListContainer extends Component {
         let indexToDelete = emptyArray.findIndex(item => item.id === id)
         if (indexToDelete !== -1) {
             emptyArray.splice(indexToDelete, 1)
-            console.log(emptyArray[1])
+            // console.log(emptyArray[1])
             this.setState({
                 ListData: emptyArray
             })

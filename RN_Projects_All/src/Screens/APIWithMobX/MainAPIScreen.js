@@ -115,7 +115,7 @@ export default class MainAPIScreen extends Component {
                                         <DeleteIcon name='delete-empty' size={vh(30)} color={Colors.balanceText} />
                                     </Text>
                                 </TouchableOpacity>
-                                <CheckBox key={item} value={item} clicked={(id, isCheck) => this.toggleCheckBox(id, isCheck)}></CheckBox>
+                                <CheckBox id={item} value={item} clicked={(id, isCheck) => this.toggleCheckBox(id, isCheck)}></CheckBox>
                             </View>
                         </View>
                     )} />
