@@ -30,14 +30,12 @@ export default class ToDoListContainer extends Component {
         )
     })
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            ListData: [],
-            task: '',
-            isCompleted: false,
-        };
+    state = {
+        ListData: [],
+        task: '',
+        isCompleted: false,
     }
+
     componentDidMount() {
         this.props.navigation.setParams({ allDelete: this.allDelete });
         AsyncStorage.getItem("ObjectData", (err, result) => {
@@ -66,33 +64,9 @@ export default class ToDoListContainer extends Component {
         )
     }
 
-    renderData = (rowData) => {
-        let { item, index } = rowData
-       
-        return (
-            <View style={[Styles.container, styles.container]}>
-                <View style={{ flexDirection: 'column' }} >
-                    <Text style={Styles.text} > {item.task} </Text>
-                    <Text style={Styles.text} > {item.id} </Text>
-                    {/* <Text style={Styles.text} > {item.isCompleted.toString()} </Text> */}
-                </View>
-                <View style={styles.viewStyle} >
-                    <TouchableOpacity onPress={() => this.handleDelete(item.id)} >
-                        <Text>
-                            <MaterialCommunityIcons name='delete-empty' size={30} color={Colors.white} />
-                        </Text>
-                    </TouchableOpacity>
-                    <CheckBox
-                        isCheck={item.isCompleted}
-                        id={item.id}
-                        clicked={(id, isCheck) => this.toggleCheckBox(id, isCheck)} />
-                </View>
-            </View>
-        )
-    }
 
     submit = () => {
-       
+
         let payload = {
             id: Math.random().toString(),
             task: this.state.task,
@@ -120,7 +94,7 @@ export default class ToDoListContainer extends Component {
     handleDelete = (id) => {
         let emptyArray = this.state.ListData;
         let indexToDelete = emptyArray.findIndex(item => item.id === id)
-        if (indexToDelete != -1) {
+        if (indexToDelete !== -1) {
             emptyArray.splice(indexToDelete, 1)
             console.log(emptyArray[1])
             this.setState({
@@ -140,17 +114,20 @@ export default class ToDoListContainer extends Component {
     }
 
     toggleCheckBox = (id, isCheck) => {
+        let emptyArray = this.state.ListData
+        let index = emptyArray.findIndex((e) => e.id === id)
+        if (index != -1) {
+            emptyArray[index].isCompleted = isCheck;
+        }
+        this.setState({ ListData: emptyArray.splice(0) })
+        
         AsyncStorage.getItem("ObjectData", (err, result) => {
             if (result) {
                 let data = JSON.parse(result)
-                let index = data.findIndex((e) => e.id === id)
-                if (index != -1) {
-                    data[index].isCompleted = !isCheck;
-                }
-                this.setState({ ListData: data })
-                data.filter(function (e) {
+                console.log("Angel", result)
+                data.filter((e) => {
                     if (e.id === id) {
-                        e.isCompleted = true
+                        e.isCompleted = isCheck
                     }
                 })
                 AsyncStorage.setItem("ObjectData", JSON.stringify(data))
@@ -158,13 +135,39 @@ export default class ToDoListContainer extends Component {
         })
     }
 
+    renderData = (rowData) => {
+        let { item } = rowData
+
+        return (
+            <View style={[Styles.container, styles.container]}>
+                <View style={{ flexDirection: 'column' }} >
+                    <Text style={Styles.text} > {item.task} </Text>
+                    <Text style={Styles.text} > {item.id} </Text>
+                    {/* <Text style={Styles.text} > {item.isCompleted.toString()} </Text> */}
+                </View>
+                <View style={styles.viewStyle} >
+                    <TouchableOpacity onPress={() => this.handleDelete(item.id)} >
+                        <Text>
+                            <MaterialCommunityIcons name='delete-empty' size={30} color={Colors.white} />
+                        </Text>
+                    </TouchableOpacity>
+                    <CheckBox
+                        isCheck={item.isCompleted}
+                        id={item.id}
+                        clicked={(id, isCheck) => this.toggleCheckBox(id, isCheck)} />
+                </View>
+            </View>
+        )
+    }
+
+
 
     render() {
         return (
             <KeyboardAwareScrollView>
                 <ImageBackground
                     source={require('../../Assets/Images/todo.jpg')}
-                    style={{ height: vh(708), width: vw(375) }}
+                    style={styles.imageBackground}
                 >
                     <View>
                         <FlatList
@@ -173,7 +176,7 @@ export default class ToDoListContainer extends Component {
                             onLayout={() => this.flatList.scrollToEnd({ animated: true })}
                             style={styles.flatList}
                             data={this.state.ListData}
-                            keyExtractor={(item, index) => Math.random().toString()}
+                            keyExtractor={(item, index) => item.id}
                             renderItem={this.renderData}
                         />
 
@@ -244,5 +247,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    imageBackground: {
+        height: vh(708),
+        width: vw(375)
     }
 })
