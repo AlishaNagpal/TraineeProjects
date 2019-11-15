@@ -6,7 +6,7 @@ import {
 } from "react-native";
 
 import LinearGradient from "react-native-linear-gradient";
-import { Colors} from "../../Constants";
+import { Colors, Images, vh, vw} from "../../Constants";
 
 const { width } = Dimensions.get("window");
 
@@ -61,7 +61,7 @@ export default class SplashToDoList extends Component {
             >
                 <Animated.View style={[styles.ring, welcomeStyle]}>
                     <Animated.Image
-                        source={require('../../Assets/Images/welcome.png')}
+                        source={Images.welcome}
                         style={styles.imageStyle}
                     />
                 </Animated.View>
@@ -82,23 +82,23 @@ const styles = StyleSheet.create({
     },
     ring: {
         backgroundColor: 'white',
-        borderRadius: 150,
-        borderWidth: 2,
+        borderRadius: vh(150),
+        borderWidth: vw(2),
         borderColor: "#FFF",
-        padding: 7
+        padding: vh(7)
     },
     viewLine: {
         position: "absolute",
-        bottom: 20,
+        bottom: vh(20),
         width: width / 2,
-        height: 4,
+        height: vh(4),
         backgroundColor: "#fff",
-        borderRadius: 2
+        borderRadius: vh(2)
     },
     imageStyle: {
         resizeMode: "contain",
-        width: 200,
-        height: 200
+        width: vw(200),
+        height: vh(200)
     }
 });
 

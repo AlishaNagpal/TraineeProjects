@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
-import { vh, vw } from '../../Constants'
 
 
 export default class Maps extends Component {
@@ -44,6 +43,15 @@ export default class Maps extends Component {
                     showsUserLocation={true}
                 >
 
+                    {/* {this.state.markers.map(marker => (
+                        <Marker coordinate={marker.latlng}>
+                            <MyCustomMarkerView {...marker} />
+                            <Callout>
+                                <MyCustomCalloutView {...marker} />
+                            </Callout>
+                        </Marker>
+                        ))} */}
+
                     {this.state.markers.map(marker => (
                         <Marker
                             coordinate={marker.latlng}
@@ -58,13 +66,13 @@ export default class Maps extends Component {
                     description={"test"}
                     // icon={image}
                 /> */}
-                    <Callout>
+                    {/* <Callout>
                         <View style={styles.calloutView} >
                             <TextInput style={styles.calloutSearch}
                                 placeholder={"Search"}
                             />
                         </View>
-                    </Callout>
+                    </Callout> */}
                 </MapView>
             </View>
         );

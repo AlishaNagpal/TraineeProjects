@@ -11,7 +11,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 
 //Custom Imports 
-import { vw, vh, Styles, Colors } from '../../Constants';
+import { vw, vh, Styles, Colors, Images } from '../../Constants';
 import { CheckBox } from '../../ReusableComponents'
 
 export default class ToDoListContainer extends Component {
@@ -166,7 +166,7 @@ export default class ToDoListContainer extends Component {
         return (
             <KeyboardAwareScrollView>
                 <ImageBackground
-                    source={require('../../Assets/Images/todo.jpg')}
+                    source={Images.todo}
                     style={styles.imageBackground}
                 >
                     <View>
