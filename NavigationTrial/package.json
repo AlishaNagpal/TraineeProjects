@@ -18,7 +18,7 @@
     "i18n": "^0.8.4",
     "i18n-js": "^3.3.0",
     "react": "16.9.0",
-    "react-native": "0.61.3",
+    "react-native": "0.62.3",
     "react-native-aws3": "^0.0.9",
     "react-native-fbsdk": "^1.0.4",
     "react-native-floating-action": "^1.19.1",
